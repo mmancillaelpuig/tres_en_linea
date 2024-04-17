@@ -11,36 +11,34 @@ public class TUI {
             int start = sc.nextInt();
             switch (start) {
                 case 1:
-                    System.out.println("Iniciant partida...");
+                    iniciarPartida();
                     exit = true;
                     break;
                 case 2:
-                    System.out.println("Carregant partida...");
+                   carregarPartida();
                     exit = true;
                     break;
                 case 3:
-                    System.out.println("Accedint a la configuració...");
+                    accedirConfig();
                     exit = true;
                     break;
                 case 4:
                     exit();
-                    break;
                 default:
                     System.out.println("No es una opció correcta, torna de nou!");
                     break;
             }
-
         }
     }
-    public static void iniciarPartida(Scanner sc){
-
-
+    public static void iniciarPartida(){
+        System.out.println("Iniciant partida...");
     }
-
-    public static void carregarPartida(Scanner sc){
+    public static void accedirConfig(){
+        System.out.println("Accedint a la configuració...");
+    }
+    public static void carregarPartida(){
         System.out.println("Carregant partida...");
     }
-
     public static void exit(){
         System.out.println("Sortint...");
         System.exit(0);
