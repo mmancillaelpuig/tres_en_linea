@@ -23,9 +23,7 @@ public class TUI {
                     exit = true;
                     break;
                 case 4:
-                    System.out.println("Sortint...");
-                    exit = true;
-                    sc.close();
+                    exit();
                     break;
                 default:
                     System.out.println("No es una opció correcta, torna de nou!");
@@ -34,8 +32,17 @@ public class TUI {
 
         }
     }
-    public void iniciarPartida(Scanner sc){
+    public static void iniciarPartida(Scanner sc){
 
 
+    }
+
+    public static void carregarPartida(Scanner sc){
+        System.out.println("Carregant partida...");
+    }
+
+    public static void exit(){
+        System.out.println("Sortint...");
+        System.exit(0);
     }
 }
