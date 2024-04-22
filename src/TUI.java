@@ -1,13 +1,11 @@
 import java.util.Scanner;
 
 public class TUI {
-    public static void mostrarMenu(Scanner sc) {
+    public  void mostrarMenu(Scanner sc) {
         boolean exit = false;
 
         while (!exit) {
-            System.out.println("Benvingut al tres en línia! Escull una de les següents opcions per a continuar:\n1.Nova Partida\n2.Carregar Partida" +
-                    "\n3.Configuració\n4.Sortir");
-
+            saludo();
             int start = sc.nextInt();
             switch (start) {
                 case 1:
@@ -26,9 +24,13 @@ public class TUI {
                     exit();
                 default:
                     System.out.println("No es una opció correcta, torna de nou!");
-                    break;
+                    mostrarMenu(sc);
             }
         }
+    }
+    public static void saludo(){
+        System.out.println("Benvingut al tres en línia! Escull una de les següents opcions per a continuar:\n1.Nova Partida\n2.Carregar Partida" +
+                "\n3.Configuració\n4.Sortir");
     }
     public static void iniciarPartida(){
         System.out.println("Iniciant partida...");
