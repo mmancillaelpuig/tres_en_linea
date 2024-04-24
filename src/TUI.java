@@ -24,7 +24,6 @@ public class TUI {
                     exit();
                 default:
                     System.out.println("No es una opció correcta, torna de nou!");
-                    mostrarMenu(sc);
             }
         }
     }
