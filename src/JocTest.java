@@ -10,13 +10,16 @@ class JocTest {
         Joc j = new Joc();
         j.novaPartida();
 
-
     }
 
     @Test
     void novaPartida_taulell() {
         Joc j = new Joc();
         j.novaPartida();
+        char [][] taulellBuit =  new char[][]{{' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ',' '}};
+        Assertions.assertArrayEquals(j.getTaulell() , taulellBuit );
 
     }
 
