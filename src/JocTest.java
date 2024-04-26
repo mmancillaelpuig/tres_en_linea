@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class JocTest {
 
     @Test
@@ -16,10 +14,10 @@ class JocTest {
     void novaPartida_taulell() {
         Joc j = new Joc();
         j.novaPartida();
-        char [][] taulellBuit =  new char[][]{{' ', ' ', ' '},
+        char[][] taulellBuit = new char[][]{{' ', ' ', ' '},
                 {' ', ' ', ' '},
-                {' ', ' ',' '}};
-        Assertions.assertArrayEquals(j.getTaulell() , taulellBuit );
+                {' ', ' ', ' '}};
+        Assertions.assertArrayEquals(j.getTaulell(), taulellBuit);
 
     }
 
