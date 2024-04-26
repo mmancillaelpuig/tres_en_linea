@@ -31,5 +31,14 @@ class JocTest {
 
     @Test
     void jugar() {
+        Joc j = new Joc();
+        j.jugar();
+        char [][] taulellbuit = new char[][]{
+                {'o', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertArrayEquals(j.getTaulell(), taulellbuit);
+
     }
 }
