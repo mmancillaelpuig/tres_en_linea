@@ -6,6 +6,12 @@ public class Joc {
     }
 
     private char [][] taulell;
+    private short torn;
+
+    public short getTorn() {
+        return torn;
+    }
+
     public Joc() {
     }
 
