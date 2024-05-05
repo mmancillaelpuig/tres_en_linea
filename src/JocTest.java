@@ -366,7 +366,7 @@ class JocTest {
                 {' ', ' ', ' '}
         };
         Assertions.assertEquals(j.getTorn(),torn);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos10):
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos10);
     }
 
     @Test
@@ -418,7 +418,7 @@ class JocTest {
                 {' ', 'o', ' '}
         };
         Assertions.assertEquals(j.getTorn(),torn);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos20;
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos20);
     }
 
     @Test
@@ -812,18 +812,4 @@ class JocTest {
         Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
     }
 
-
-
-
-
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos01);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos02);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos10);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos11);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos12);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos20);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos21);
-        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
-    }
 }
