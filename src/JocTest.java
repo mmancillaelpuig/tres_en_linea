@@ -30,15 +30,800 @@ class JocTest {
     }
 
     @Test
-    void jugar() {
+    void jugar_TaullelBuitpos00() {
         Joc j = new Joc();
         j.jugar();
-        char [][] taulellbuit = new char[][]{
+
+        //torn del jugador 1
+        short torn1 = 1;
+
+        char[][] taulellPos00 = new char[][]{
                 {'o', ' ', ' '},
                 {' ', ' ', ' '},
                 {' ', ' ', ' '}
         };
-        Assertions.assertArrayEquals(j.getTaulell(), taulellbuit);
+        Assertions.assertEquals(j.getTorn(),torn1);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00);
+    }
 
+
+    @Test
+    void jugar_TaullelBuitpos01() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 1
+        short torn1 = 1;
+
+
+        char[][] taulellPos01 = new char[][]{
+                {' ', 'o', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn1);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos01);
+
+    }
+
+    @Test
+    void jugar_TaullelBuitpos02() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 1
+        short torn1 = 1;
+        char[][] taulellPos02 = new char[][]{
+                {' ', ' ', 'o'},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn1);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos02);
+    }
+
+    @Test
+    void jugar_TaullelBuitpos10() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 1
+        short torn1 = 1;
+        char[][] taulellPos10 = new char[][]{
+                {' ', ' ', ' '},
+                {'o', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn1);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos10);
+    }
+
+    @Test
+    void jugar_TaullelBuitpos11() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 1
+        short torn1 = 1;
+        char[][] taulellPos11 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', 'o', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn1);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos11);
+    }
+
+    @Test
+    void jugar_TaullelBuitpos12() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 1
+        short torn1 = 1;
+        char[][] taulellPos12 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', 'o'},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn1);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos12);
+    }
+
+    @Test
+    void jugar_TaullelBuitpos20() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 1
+        short torn1 = 1;
+        char[][] taulellPos20 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {'o', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn1);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos20);
+    }
+
+    @Test
+    void jugar_TaullelBuitpos21() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 1
+        short torn1 = 1;
+        char[][] taulellPos21 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', 'o', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn1);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos21);
+    }
+
+    @Test
+    void jugar_TaullelBuitpos22() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 1
+        short torn1 = 1;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', 'o'}
+        };
+        Assertions.assertEquals(j.getTorn(),torn1);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+
+    @Test
+    void jugar_TaullelNoBuit_01() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos00_01 = new char[][]{
+                {'o', 'o', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00_01);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_02() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+
+        char[][] taulellPos00_02 = new char[][]{
+                {'o', ' ', 'o'},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00_02);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_03() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos00_10 = new char[][]{
+                {'o', ' ', ' '},
+                {'o', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00_10);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_04() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos00_11 = new char[][]{
+                {'o', ' ', ' '},
+                {' ', 'o', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00_11);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_05() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos00_12 = new char[][]{
+                {'o', ' ', ' '},
+                {' ', ' ', 'o'},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00_12);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_06() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos00_20 = new char[][]{
+                {'o', ' ', ' '},
+                {' ', ' ', ' '},
+                {'o', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00_20);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_07() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos00_21 = new char[][]{
+                {'o', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', 'o', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00_21);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_08() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos00_22 = new char[][]{
+                {'o', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', 'o'}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00_22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_09() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+
+        char[][] taulellPos01 = new char[][]{
+                {' ', 'o', 'o'},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos01);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_10() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos02 = new char[][]{
+                {' ', 'o', ' '},
+                {'o', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos02);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_11() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos10 = new char[][]{
+                {' ', 'o', ' '},
+                {' ', 'o', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos10):
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_12() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+
+        char[][] taulellPos11 = new char[][]{
+                {' ', 'o', ' '},
+                {' ', ' ', 'o'},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos11);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_13() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos12 = new char[][]{
+                {' ', 'o', ' '},
+                {' ', ' ', ' '},
+                {'o', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos12);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_14() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos20 = new char[][]{
+                {' ', 'o', ' '},
+                {' ', ' ', ' '},
+                {' ', 'o', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos20;
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_15() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos21 = new char[][]{
+                {' ', 'o', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', 'o'}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos21);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_16() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', 'o'},
+                {'o', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_17() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', 'o'},
+                {' ', 'o', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_18() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', 'o'},
+                {' ', 'o', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_19() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', 'o'},
+                {' ', ' ', 'o'},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_20() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', 'o'},
+                {' ', ' ', ' '},
+                {'o', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_21() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', 'o'},
+                {' ', ' ', ' '},
+                {' ', 'o', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_22() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', 'o'},
+                {' ', ' ', ' '},
+                {' ', ' ', 'o'}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_23() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {'o', 'o', ' '},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_24() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {'o', ' ', 'o'},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_25() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {'o', ' ', ' '},
+                {'o', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_26() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {'o', ' ', ' '},
+                {' ', 'o', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_27() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {'o', ' ', ' '},
+                {' ', ' ', 'o'}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_28() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', 'o', 'o'},
+                {' ', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_29() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', 'o', ' '},
+                {'o', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_30() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', 'o', ' '},
+                {' ', 'o', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_31() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', 'o', ' '},
+                {' ', ' ', 'o'}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_32() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', 'o'},
+                {'o', ' ', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_33() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', 'o'},
+                {' ', 'o', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_34() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', 'o'},
+                {' ', ' ', 'o'}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_35() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {'o', 'o', ' '}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_36() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {'o', ' ', 'o'}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+    @Test
+    void jugar_TaullelNoBuit_37() {
+        Joc j = new Joc();
+        j.jugar();
+
+        //torn del jugador 2
+        short torn = 2;
+
+        char[][] taulellPos22 = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', 'o', 'o'}
+        };
+        Assertions.assertEquals(j.getTorn(),torn);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
+    }
+
+
+
+
+
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos00);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos01);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos02);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos10);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos11);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos12);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos20);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos21);
+        Assertions.assertArrayEquals(j.getTaulell(), taulellPos22);
     }
 }
