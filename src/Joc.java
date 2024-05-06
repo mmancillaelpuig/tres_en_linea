@@ -13,8 +13,17 @@ public class Joc {
     }
 
     public Joc() {
+        this.taulell = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        this.torn = 1;
     }
-
+    public Joc(char[][] taulellInici, short torn1) {
+        this.taulell = taulellInici;
+        this.torn = torn1;
+    }
     public void novaPartida(){
         throw new NotImplementedException();
     }
@@ -22,7 +31,7 @@ public class Joc {
 
         throw new NotImplementedException();
     }
-    public void jugadaGuanyadora(){
+    public boolean jugadaGuanyadora(int fila, int columna, char jugador) {
         throw new NotImplementedException();
     }
 }
