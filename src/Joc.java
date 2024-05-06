@@ -27,7 +27,7 @@ public class Joc {
     public void novaPartida(){
         throw new NotImplementedException();
     }
-    public void jugar(){
+    public boolean jugar(int fila, int columna, char jugador){
 
         throw new NotImplementedException();
     }
