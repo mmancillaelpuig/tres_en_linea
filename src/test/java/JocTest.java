@@ -92,10 +92,8 @@ class JocTest {
                 {' ', ' ', ' '}
         };
 
-        Joc j = new Joc();
+        Joc j = new Joc(taulellBuit, (short)1);
         j.novaPartida();
-        short torn1 = 1;
-
         for (int fila = 0; fila < 3; fila++) {
             for (int columna = 0; columna < 3; columna++) {
                 Assertions.assertFalse((j.jugar(fila, columna, 'x')));
@@ -112,9 +110,8 @@ class JocTest {
                 {' ', ' ', ' '}
         };
 
-        Joc j = new Joc();
+        Joc j = new Joc(taulellSegonJugador, (short)2);
         j.novaPartida();
-        short torn2 = 2;
 
         for (int fila = 0; fila < 3; fila++) {
             for (int columna = 0; columna < 3; columna++) {
