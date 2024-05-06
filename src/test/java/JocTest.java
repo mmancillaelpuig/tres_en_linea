@@ -65,7 +65,7 @@ class JocTest {
     void jugadaGuanyadoraJugador1Guanya() {
         char[][] taulellGuanya1 = {
                 {'x', 'x', ' '},
-                {' ', ' ', ' '},
+                {'o', 'o', ' '},
                 {' ', ' ', ' '},
         };
 
@@ -76,7 +76,7 @@ class JocTest {
     void jugadaGuanyadoraJugador2Guanya() {
         char[][] taulellGuanya2 = {
                 {'o', 'o', ' '},
-                {' ', ' ', ' '},
+                {'x', 'x', ' '},
                 {' ', ' ', ' '},
         };
 
