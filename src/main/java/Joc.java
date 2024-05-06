@@ -7,12 +7,27 @@ public class Joc {
 
     private char [][] taulell;
     private short torn;
+    private short midaTaulell = 3;
 
     public short getTorn() {
         return torn;
     }
+    public short getMidaTaulell(){return midaTaulell;}
+
+    public void setMidaTaulell(short midaTaulell) {
+        this.midaTaulell = midaTaulell;
+    }
 
     public Joc() {
+        this.taulell = new char[][]{
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
+        };
+        this.torn = 1;
+    }
+
+    public Joc(short midaTaulell){
         this.taulell = new char[][]{
                 {' ', ' ', ' '},
                 {' ', ' ', ' '},
