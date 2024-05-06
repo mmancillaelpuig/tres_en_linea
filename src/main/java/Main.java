@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         TUI tui = new TUI();
-        tui.mostrarMenu();
+        tui.mostrarMenu(sc);
 
         int opcio = sc.nextInt();
         switch (opcio) {
@@ -24,7 +24,7 @@ public class Main {
                     break;
                 default:
                     System.out.println("No es una opció correcta, torna de nou!");
-                    tui.mostrarMenu();
+                    tui.mostrarMenu(sc);
             }
 
     }

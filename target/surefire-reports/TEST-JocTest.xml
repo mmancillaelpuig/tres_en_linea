@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="JocTest" time="0.034" tests="52" errors="52" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\Usuario\Desktop\DAM1\3enRaya\tres_en_linea\target\test-classes;C:\Users\Usuario\Desktop\DAM1\3enRaya\tres_en_linea\target\classes;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\Usuario\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Usuario\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;C:\Users\Usuario\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Usuario\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.5.2\junit-jupiter-params-5.5.2.jar;"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="user.country" value="ES"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\bin"/>
+    <property name="sun.java.command" value="C:\Users\Usuario\AppData\Local\Temp\surefire2358685159808009844\surefirebooter7820107664537327345.jar C:\Users\Usuario\AppData\Local\Temp\surefire2358685159808009844 2024-05-06T13-12-56_682-jvmRun1 surefire3662060655672901222tmp surefire_03400195110214922368tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\Usuario\Desktop\DAM1\3enRaya\tres_en_linea\target\test-classes;C:\Users\Usuario\Desktop\DAM1\3enRaya\tres_en_linea\target\classes;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\Usuario\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\Usuario\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;C:\Users\Usuario\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\Usuario\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\Usuario\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.5.2\junit-jupiter-params-5.5.2.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\Usuario"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.home" value="C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre"/>
+    <property name="basedir" value="C:\Users\Usuario\Desktop\DAM1\3enRaya\tres_en_linea"/>
+    <property name="file.separator" value="\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\Usuario\AppData\Local\Temp\surefire2358685159808009844\surefirebooter7820107664537327345.jar"/>
+    <property name="sun.boot.class.path" value="C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\lib\resources.jar;C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\lib\rt.jar;C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\lib\sunrsasign.jar;C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\lib\jsse.jar;C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\lib\jce.jar;C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\lib\charsets.jar;C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\lib\jfr.jar;C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\classes"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="1.8.0_412-b08"/>
+    <property name="user.name" value="DavidBO"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.endorsed.dirs" value="C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\lib\endorsed"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\Usuario\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-8/issues/"/>
+    <property name="java.io.tmpdir" value="C:\Users\Usuario\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2023.2.3"/>
+    <property name="java.version" value="1.8.0_412"/>
+    <property name="user.dir" value="C:\Users\Usuario\Desktop\DAM1\3enRaya\tres_en_linea"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Eclipse Adoptium\jdk-21.0.1.12-hotspot\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\BaseX\bin;C:\Users\Usuario\AppData\Local\Programs\Python\Launcher\;C:\Users\Usuario\AppData\Local\Microsoft\WindowsApps;;C:\Users\Usuario\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Usuario\AppData\Local\Microsoft\WinGet\Packages\GodotEngine.GodotEngine_Microsoft.Winget.Source_8wekyb3d8bbwe;;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
+    <property name="java.vm.version" value="25.412-b08"/>
+    <property name="java.specification.maintenance.version" value="5"/>
+    <property name="java.ext.dirs" value="C:\Users\Usuario\.jdks\corretto-1.8.0_412\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="52.0"/>
+  </properties>
+  <testcase name="novaPartida_jugador" classname="JocTest" time="0.011">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.novaPartida_jugador(JocTest.java:13)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_01" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_01(JocTest.java:241)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_02" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_02(JocTest.java:258)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_03" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_03(JocTest.java:276)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_04" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_04(JocTest.java:293)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_05" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_05(JocTest.java:310)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_06" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_06(JocTest.java:327)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_07" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_07(JocTest.java:344)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_08" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_08(JocTest.java:361)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_09" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_09(JocTest.java:378)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_10" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_10(JocTest.java:396)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_11" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_11(JocTest.java:413)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_12" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_12(JocTest.java:430)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_13" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_13(JocTest.java:448)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_14" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_14(JocTest.java:465)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_15" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_15(JocTest.java:482)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_16" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_16(JocTest.java:499)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_17" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_17(JocTest.java:516)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_18" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_18(JocTest.java:533)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_19" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_19(JocTest.java:550)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_20" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_20(JocTest.java:567)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_21" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_21(JocTest.java:584)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_22" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_22(JocTest.java:601)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_23" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_23(JocTest.java:618)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_24" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_24(JocTest.java:635)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_25" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_25(JocTest.java:652)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_26" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_26(JocTest.java:669)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_27" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_27(JocTest.java:686)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_28" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_28(JocTest.java:703)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_29" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_29(JocTest.java:720)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_30" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_30(JocTest.java:737)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_31" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_31(JocTest.java:754)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_32" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_32(JocTest.java:771)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_33" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_33(JocTest.java:788)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_34" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_34(JocTest.java:805)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_35" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_35(JocTest.java:822)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_36" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_36(JocTest.java:839)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelNoBuit_37" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_37(JocTest.java:856)
+</error>
+  </testcase>
+  <testcase name="jugadaGuanyadoraJugador1Guanya" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugadaGuanyadoraJugador1Guanya(JocTest.java:73)
+</error>
+  </testcase>
+  <testcase name="jugadaGuanyadoraJugador2Guanya" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugadaGuanyadoraJugador2Guanya(JocTest.java:84)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelBuitpos00" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos00(JocTest.java:90)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelBuitpos01" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos01(JocTest.java:108)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelBuitpos02" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos02(JocTest.java:127)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelBuitpos10" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos10(JocTest.java:143)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelBuitpos11" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos11(JocTest.java:159)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelBuitpos12" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos12(JocTest.java:175)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelBuitpos20" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos20(JocTest.java:191)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelBuitpos21" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos21(JocTest.java:207)
+</error>
+  </testcase>
+  <testcase name="jugar_TaullelBuitpos22" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos22(JocTest.java:223)
+</error>
+  </testcase>
+  <testcase name="jugadaGuanyadoraUnaCasella" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugadaGuanyadoraUnaCasella(JocTest.java:59)
+</error>
+  </testcase>
+  <testcase name="jugadaGuanyadoraTaulellBuit" classname="JocTest" time="0">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugadaGuanyadoraTaulellBuit(JocTest.java:42)
+</error>
+  </testcase>
+  <testcase name="novaPartida_taulell" classname="JocTest" time="0.001">
+    <error type="sun.reflect.generics.reflectiveObjects.NotImplementedException">sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.novaPartida_taulell(JocTest.java:21)
+</error>
+  </testcase>
+</testsuite>

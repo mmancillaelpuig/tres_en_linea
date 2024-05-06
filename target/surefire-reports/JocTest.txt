@@ -1,0 +1,212 @@
+-------------------------------------------------------------------------------
+Test set: JocTest
+-------------------------------------------------------------------------------
+Tests run: 52, Failures: 0, Errors: 52, Skipped: 0, Time elapsed: 0.034 s <<< FAILURE! - in JocTest
+novaPartida_jugador  Time elapsed: 0.011 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.novaPartida_jugador(JocTest.java:13)
+
+jugar_TaullelNoBuit_01  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_01(JocTest.java:241)
+
+jugar_TaullelNoBuit_02  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_02(JocTest.java:258)
+
+jugar_TaullelNoBuit_03  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_03(JocTest.java:276)
+
+jugar_TaullelNoBuit_04  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_04(JocTest.java:293)
+
+jugar_TaullelNoBuit_05  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_05(JocTest.java:310)
+
+jugar_TaullelNoBuit_06  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_06(JocTest.java:327)
+
+jugar_TaullelNoBuit_07  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_07(JocTest.java:344)
+
+jugar_TaullelNoBuit_08  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_08(JocTest.java:361)
+
+jugar_TaullelNoBuit_09  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_09(JocTest.java:378)
+
+jugar_TaullelNoBuit_10  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_10(JocTest.java:396)
+
+jugar_TaullelNoBuit_11  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_11(JocTest.java:413)
+
+jugar_TaullelNoBuit_12  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_12(JocTest.java:430)
+
+jugar_TaullelNoBuit_13  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_13(JocTest.java:448)
+
+jugar_TaullelNoBuit_14  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_14(JocTest.java:465)
+
+jugar_TaullelNoBuit_15  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_15(JocTest.java:482)
+
+jugar_TaullelNoBuit_16  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_16(JocTest.java:499)
+
+jugar_TaullelNoBuit_17  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_17(JocTest.java:516)
+
+jugar_TaullelNoBuit_18  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_18(JocTest.java:533)
+
+jugar_TaullelNoBuit_19  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_19(JocTest.java:550)
+
+jugar_TaullelNoBuit_20  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_20(JocTest.java:567)
+
+jugar_TaullelNoBuit_21  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_21(JocTest.java:584)
+
+jugar_TaullelNoBuit_22  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_22(JocTest.java:601)
+
+jugar_TaullelNoBuit_23  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_23(JocTest.java:618)
+
+jugar_TaullelNoBuit_24  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_24(JocTest.java:635)
+
+jugar_TaullelNoBuit_25  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_25(JocTest.java:652)
+
+jugar_TaullelNoBuit_26  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_26(JocTest.java:669)
+
+jugar_TaullelNoBuit_27  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_27(JocTest.java:686)
+
+jugar_TaullelNoBuit_28  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_28(JocTest.java:703)
+
+jugar_TaullelNoBuit_29  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_29(JocTest.java:720)
+
+jugar_TaullelNoBuit_30  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_30(JocTest.java:737)
+
+jugar_TaullelNoBuit_31  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_31(JocTest.java:754)
+
+jugar_TaullelNoBuit_32  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_32(JocTest.java:771)
+
+jugar_TaullelNoBuit_33  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_33(JocTest.java:788)
+
+jugar_TaullelNoBuit_34  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_34(JocTest.java:805)
+
+jugar_TaullelNoBuit_35  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_35(JocTest.java:822)
+
+jugar_TaullelNoBuit_36  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_36(JocTest.java:839)
+
+jugar_TaullelNoBuit_37  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelNoBuit_37(JocTest.java:856)
+
+jugadaGuanyadoraJugador1Guanya  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugadaGuanyadoraJugador1Guanya(JocTest.java:73)
+
+jugadaGuanyadoraJugador2Guanya  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugadaGuanyadoraJugador2Guanya(JocTest.java:84)
+
+jugar_TaullelBuitpos00  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos00(JocTest.java:90)
+
+jugar_TaullelBuitpos01  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos01(JocTest.java:108)
+
+jugar_TaullelBuitpos02  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos02(JocTest.java:127)
+
+jugar_TaullelBuitpos10  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos10(JocTest.java:143)
+
+jugar_TaullelBuitpos11  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos11(JocTest.java:159)
+
+jugar_TaullelBuitpos12  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos12(JocTest.java:175)
+
+jugar_TaullelBuitpos20  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos20(JocTest.java:191)
+
+jugar_TaullelBuitpos21  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos21(JocTest.java:207)
+
+jugar_TaullelBuitpos22  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugar_TaullelBuitpos22(JocTest.java:223)
+
+jugadaGuanyadoraUnaCasella  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugadaGuanyadoraUnaCasella(JocTest.java:59)
+
+jugadaGuanyadoraTaulellBuit  Time elapsed: 0 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.jugadaGuanyadoraTaulellBuit(JocTest.java:42)
+
+novaPartida_taulell  Time elapsed: 0.001 s  <<< ERROR!
+sun.reflect.generics.reflectiveObjects.NotImplementedException
+	at JocTest.novaPartida_taulell(JocTest.java:21)
+
