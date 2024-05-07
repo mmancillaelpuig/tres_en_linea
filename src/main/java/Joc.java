@@ -1,11 +1,11 @@
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class Joc {
-    public  char[][] getTaulell() {
+    public char[][] getTaulell() {
         return taulell;
     }
 
-    private char [][] taulell;
+    private char[][] taulell;
     private short torn;
     private short midaTaulell = 3;
 
@@ -35,18 +35,35 @@ public class Joc {
         };
         this.torn = 1;
     }
+
     public Joc(char[][] taulellInici, short torn1) {
         this.taulell = taulellInici;
         this.torn = torn1;
     }
-    public void novaPartida(){
-        throw new NotImplementedException();
+
+    public void novaPartida() {
+        TUI.mostrarTaulell();
+        System.out.println("És el torn del jugador: "+ torn);
     }
-    public boolean jugar(int fila, int columna, char jugador){
+
+    public boolean jugar(int fila, int columna, char jugador) {
 
         throw new NotImplementedException();
     }
+
+
     public boolean jugadaGuanyadora(int fila, int columna, char jugador) {
-        throw new NotImplementedException();
+        char original = taulell[fila][columna];
+        if (original != ' ') return false;
+        taulell[fila][columna] = jugador;
+
+        boolean ganadora = (taulell[fila][0] == jugador && taulell[fila][1] == jugador && taulell[fila][2] == jugador)
+                || (taulell[0][columna] == jugador && taulell[1][columna] == jugador && taulell[2][columna] == jugador)
+                || (fila == columna && taulell[0][0] == jugador && taulell[1][1] == jugador && taulell[2][2] == jugador)
+                || (fila + columna == 2 && taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador);
+
+        taulell[fila][columna] = original;
+
+        return ganadora;
     }
 }

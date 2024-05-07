@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class TUI {
-    public  void mostrarMenu(Scanner sc, TUI tui) {
+    public  void mostrarMenu(Scanner sc, TUI tui, Joc j) {
         boolean exit = false;
 
         while (!exit) {
@@ -17,7 +17,7 @@ public class TUI {
                     exit = true;
                     break;
                 case 3:
-                    accedirConfig(sc, tui);
+                    accedirConfig(sc, tui,j);
                     exit = true;
                     break;
                 case 4:
@@ -31,12 +31,25 @@ public class TUI {
         System.out.println("Benvingut al tres en línia! Escull una de les següents opcions per a continuar:\n1.Nova Partida\n2.Carregar Partida" +
                 "\n3.Configuració\n4.Sortir");
     }
+    public static void mostrarTaulell() {
+        Joc j = new Joc();
+        char[][] taulell = j.getTaulell();
+
+        for (int fila = 0; fila < taulell.length; fila++) {
+            for (int columna = 0; columna < taulell[fila].length; columna++) {
+                System.out.print(taulell[fila][columna] +"_");
+            }
+            System.out.println();
+        }
+    }
     public static void iniciarPartida(){
         System.out.println("Iniciant partida...");
+        Joc j = new Joc();
+        j.novaPartida();
     }
-    public static void accedirConfig(Scanner sc, TUI tui){
+    public static void accedirConfig(Scanner sc, TUI tui, Joc j){
         System.out.println("Accedint a la configuració...");
-        Main.configuracio(sc,tui);
+        Main.configuracio(sc,tui,j);
     }
     public static void carregarPartida(){
         System.out.println("Carregant partida...");
