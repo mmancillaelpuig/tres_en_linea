@@ -7,7 +7,7 @@ public class Joc {
 
     private char[][] taulell;
     private short torn;
-    private short midaTaulell = 3;
+    private short midaTaulell;
 
     public short getTorn() {
         return torn;
@@ -18,21 +18,15 @@ public class Joc {
         this.midaTaulell = midaTaulell;
     }
 
-    public Joc() {
-        this.taulell = new char[][]{
-                {' ', ' ', ' '},
-                {' ', ' ', ' '},
-                {' ', ' ', ' '}
-        };
-        this.torn = 1;
-    }
+    public Joc(){
+        this.midaTaulell = 3;
+        this.taulell = new char[midaTaulell][midaTaulell];
+            for (int i = 0; i < midaTaulell; i++){
+                for (int j = 0; j < midaTaulell; j++){
+                    this.taulell[i][j] = ' ';
+                }
+            }
 
-    public Joc(short midaTaulell){
-        this.taulell = new char[][]{
-                {' ', ' ', ' '},
-                {' ', ' ', ' '},
-                {' ', ' ', ' '}
-        };
         this.torn = 1;
     }
 
