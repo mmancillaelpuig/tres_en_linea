@@ -50,7 +50,7 @@ public class TUI {
             mostrarMenu();
             Path dirPath = Paths.get("savedgames");
             boolean result = false;
-            if (Files.notExists(dirPath)){
+            /*if (Files.notExists(dirPath)){
                 File savedgames = new File("savedgames");
                 result = savedgames.mkdir();
 
@@ -76,7 +76,7 @@ public class TUI {
                 myWriter.write(j.getTorn());
                 myWriter.write(j.getTaulell());
 
-            }
+            }*/
         }
         return new int[]{fila, columna};
     }
