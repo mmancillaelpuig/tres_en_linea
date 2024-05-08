@@ -10,15 +10,9 @@ public class Joc {
 
     private char[][] taulell;
     private short torn;
-    private short midaTaulell;
 
     public short getTorn() {
         return torn;
-    }
-    public short getMidaTaulell(){return midaTaulell;}
-
-    public void setMidaTaulell(short midaTaulell) {
-        this.midaTaulell = midaTaulell;
     }
 
     public void setTorn(short torn) {
@@ -26,48 +20,36 @@ public class Joc {
     }
 
     public Joc(){
-        this.midaTaulell = 3;
-        this.taulell = new char[midaTaulell][midaTaulell];
-            for (int i = 0; i < midaTaulell; i++){
-                for (int j = 0; j < midaTaulell; j++){
-                    this.taulell[i][j] = '_';
-                }
-            }
+        novaPartida();
+    }
 
+    public void carregarPartida(String filePath){
+        //Llegir fitxer
+        //modificar this.taulell
+        //*modificar this.torn
+    }
+
+    public void novaPartida() {
+        //Llegir mida del fitxer de config
+        int mida = 3;   //mida default
+        this.taulell = new char[mida][mida];
         this.torn = 1;
-    }
 
-    public Joc(char[][] taulellInici, short torn1) {
-        this.taulell = taulellInici;
-        this.torn = torn1;
-    }
-
-    public void novaPartida(Scanner sc, TUI tui, Joc j) {
-        tui.mostrarTaulell(j);
-        System.out.println("És el torn del jugador: "+ torn);
-        jugar(sc.nextInt(), sc.nextInt(), sc.next().charAt(0), sc, tui, j);
-    }
-
-    public boolean jugar(int fila, int columna, char jugador, Scanner sc, TUI tui, Joc j) {
-
-            if (getTaulell()[fila][columna] == '_') {
-                getTaulell()[fila][columna] = jugador;
-                tui.mostrarTaulell(j);
-                if (getTorn() == (short) 1){
-                    setTorn((short) 2);
-                    System.out.println("Torn del jugador " + getTorn());
-                } else {
-                    setTorn((short) 1);
-                    System.out.println("Torn del jugador " + getTorn());
-                }
-                jugar(sc.nextInt(), sc.nextInt(), sc.next().charAt(0), sc, tui, j);
-
-                return true;
-            } else {
-                System.out.println("Posicio ocupada, torna de nou!");
-                jugar(sc.nextInt(), sc.nextInt(), sc.next().charAt(0), sc, tui, j);
-                return false;
+        for (int i = 0; i < this.taulell.length; i++){
+            for (int j = 0; j < this.taulell[i].length; j++){
+                this.taulell[i][j] = '_';
             }
+        }
+    }
+
+    public boolean jugar(int fila, int columna) {
+        if (this.taulell[fila][columna] == '_') {
+            this.taulell[fila][columna] = (this.torn == 1 ? 'X' : 'O');
+            this.torn = (this.torn == 1 ? (short)2 : (short)1);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

@@ -4,34 +4,44 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
         Joc j = new Joc();
         TUI tui = new TUI();
-        tui.mostrarMenu(sc, tui,j);
 
-        int opcio = sc.nextInt();
-        switch (opcio) {
-            case 1:
-                j.novaPartida(sc, tui, j);
-                break;
+        menu:
+        while (true) {
+            int opcio = tui.mostrarMenu();
+            switch (opcio) {
+                case 1:
+                    novaPartida(tui, j);
+                    break;
                 case 2:
                     carregarPartida();
                     break;
                 case 3:
-                    configuracio(sc, tui,j);
+                    configuracio(sc, tui, j);
                     break;
                 case 4:
-                    sortir();
-                    break;
+                    break menu;
                 default:
                     System.out.println("No es una opció correcta, torna de nou!");
-                    tui.mostrarMenu(sc, tui,j);
+                    tui.mostrarMenu(sc, tui, j);
             }
-
+        }
     }
 
-    public static void novaPartida(){
-        throw new NotImplementedException();
+    public static void novaPartida(TUI tui, Joc j){
+        tui.iniciarPartida();
+        j.novaPartida();
+        tui.mostrarTaulell(j.getTaulell());
+        //demanar jugada a TUI del J1
+        //enviar jugada a joc
+        //demanar jugada a TUI del J2
+        //enviar jugada a joc
+        //demanar jugada a TUI del J1
+        //enviar jugada a joc
+        //demanar jugada a TUI del J2
+        //enviar jugada a joc
+        //BUCLE!!! fins que acabi la artida
     }
 
     public static void carregarPartida(){
@@ -61,7 +71,4 @@ public class Main {
         }
     }
 
-    public static void sortir(){
-        System.exit(0);
-    }
 }
