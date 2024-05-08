@@ -46,7 +46,6 @@ class JocTest {
         }
     }
 
-
     @Test
     void jugadaGuanyadoraUnaCasella() {
         Joc j = new Joc();
@@ -73,7 +72,7 @@ class JocTest {
         Joc j = new Joc();
         j.jugar(0, 0, 'O');
         j.jugar(0, 1, 'O');
-        j.jugar(0, 2, 'O'); // Marcamos las tres casillas de la fila superior con 'O'
+        j.jugar(0, 2, 'O'); // Igual pero con 'O'
         Assertions.assertTrue(j.jugadaGuanyadora(0, 2, 'O'), "Jugador 'O' hauria d'haver guanyat.");
     }
 
@@ -91,7 +90,7 @@ class JocTest {
 
 
     @Test
-    void jugarSegonJugador() {
+    void jugarPrimerJugador() {
         Joc j = new Joc();
         j.jugar(0, 0, 'X');  // El primer jugador juega en la posición (0, 0).
         for (int fila = 0; fila < 3; fila++) {

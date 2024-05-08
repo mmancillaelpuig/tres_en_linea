@@ -57,6 +57,10 @@ public class Joc {
         return taulell;
     }
 
+    public short getMidaTaulell() {
+        return midaTaulell;
+    }
+
     public short getTorn() {
         return torn;
     }

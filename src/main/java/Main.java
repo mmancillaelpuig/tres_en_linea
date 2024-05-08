@@ -29,13 +29,12 @@ public class Main {
     }
 
     public static void novaPartida(Joc joc, TUI tui) {
-        // Implementar la lógica para nueva partida
         joc.inicialitzarTaulell();
         boolean continuar = true;
         char jugadorActual = 'X';
         while (continuar) {
             tui.mostrarTaulell(joc.getTaulell());
-            int[] jugada = tui.recollirJugada();
+            int[] jugada = tui.recollirJugada(joc);
             if (joc.jugar(jugada[0], jugada[1], jugadorActual)) {
                 if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
                     tui.mostrarTaulell(joc.getTaulell());
@@ -61,6 +60,7 @@ public class Main {
             tui.mostrarMissatge("Nova mida establerta: " + novaMida);
         } else {
             tui.mostrarMissatge("La mida introduïda no és vàlida. S'ha de mantenir entre 3 i 10.");
+            configuracio(joc,tui);
         }
     }
 }
