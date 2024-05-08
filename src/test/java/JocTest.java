@@ -8,7 +8,7 @@ class JocTest {
     void novaPartida_jugador() {
         Joc j = new Joc();
         j.novaPartida();  // Asegurarse de que el estado inicial es correcto
-        Assertions.assertEquals(1, j.getTorn(), "El turno debería ser del jugador 1 al inicio.");
+        Assertions.assertEquals(1, j.getTorn(), "El torn hauri de ser del jugador 1 a l'inici.");
     }
 
     @Test
@@ -20,7 +20,7 @@ class JocTest {
                 {'_', '_', '_'},
                 {'_', '_', '_'}
         };
-        Assertions.assertArrayEquals(expectedTaulell, j.getTaulell(), "El tablero debería estar vacío al inicio.");
+        Assertions.assertArrayEquals(expectedTaulell, j.getTaulell(), "El taulell hauria d'estar buit a l'inici.");
     }
 
 
@@ -53,7 +53,7 @@ class JocTest {
         j.jugar(0, 0, 'X');  // Marcamos una sola casilla
         for (int fila = 0; fila < 3; fila++) {
             for (int columna = 0; columna < 3; columna++) {
-                Assertions.assertFalse(j.jugadaGuanyadora(fila, columna, 'X'), "No debería haber ganador con una sola casilla marcada.");
+                Assertions.assertFalse(j.jugadaGuanyadora(fila, columna, 'X'), "No hauria de poder guanyar ningú amb una casella marcada.");
             }
         }
     }
@@ -65,7 +65,7 @@ class JocTest {
         j.jugar(0, 0, 'X');
         j.jugar(0, 1, 'X');
         j.jugar(0, 2, 'X'); // Marcamos las tres casillas de la fila superior con 'X'
-        Assertions.assertTrue(j.jugadaGuanyadora(0, 2, 'X'), "Jugador 'X' debería haber ganado.");
+        Assertions.assertTrue(j.jugadaGuanyadora(0, 2, 'X'), "Jugador 'X' hauria d'haver guanyat.");
     }
 
     @Test
@@ -74,7 +74,7 @@ class JocTest {
         j.jugar(0, 0, 'O');
         j.jugar(0, 1, 'O');
         j.jugar(0, 2, 'O'); // Marcamos las tres casillas de la fila superior con 'O'
-        Assertions.assertTrue(j.jugadaGuanyadora(0, 2, 'O'), "Jugador 'O' debería haber ganado.");
+        Assertions.assertTrue(j.jugadaGuanyadora(0, 2, 'O'), "Jugador 'O' hauria d'haver guanyat.");
     }
 
 
@@ -84,7 +84,7 @@ class JocTest {
         j.novaPartida();
         for (int fila = 0; fila < 3; fila++) {
             for (int columna = 0; columna < 3; columna++) {
-                Assertions.assertTrue(j.jugar(fila, columna, 'X'), "Debería poder jugar en cualquier casilla de un tablero vacío.");
+                Assertions.assertTrue(j.jugar(fila, columna, 'X'), "Hauria de poder jugar a qualsevol casella a un taulell buit.");
             }
         }
     }
@@ -97,7 +97,7 @@ class JocTest {
         for (int fila = 0; fila < 3; fila++) {
             for (int columna = 0; columna < 3; columna++) {
                 if (!(fila == 0 && columna == 0)) {
-                    Assertions.assertTrue(j.jugar(fila, columna, 'O'), "El segundo jugador debería poder jugar en cualquier otra casilla.");
+                    Assertions.assertTrue(j.jugar(fila, columna, 'O'), "El segon jugador hauria de poder jugar a qualsevol casella.");
                 }
             }
         }
