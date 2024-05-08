@@ -12,7 +12,7 @@ public class Main {
         int opcio = sc.nextInt();
         switch (opcio) {
             case 1:
-                novaPartida();
+                j.novaPartida(sc, tui, j);
                 break;
                 case 2:
                     carregarPartida();

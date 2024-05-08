@@ -9,7 +9,7 @@ public class TUI {
             int start = sc.nextInt();
             switch (start) {
                 case 1:
-                    iniciarPartida();
+                    iniciarPartida(sc, tui);
                     exit = true;
                     break;
                 case 2:
@@ -31,21 +31,20 @@ public class TUI {
         System.out.println("Benvingut al tres en línia! Escull una de les següents opcions per a continuar:\n1.Nova Partida\n2.Carregar Partida" +
                 "\n3.Configuració\n4.Sortir");
     }
-    public static void mostrarTaulell() {
-        Joc j = new Joc();
+    public void mostrarTaulell(Joc j) {
         char[][] taulell = j.getTaulell();
 
         for (int fila = 0; fila < taulell.length; fila++) {
             for (int columna = 0; columna < taulell[fila].length; columna++) {
-                System.out.print(taulell[fila][columna] +"_");
+                System.out.print(taulell[fila][columna] +" ");
             }
             System.out.println();
         }
     }
-    public static void iniciarPartida(){
+    public static void iniciarPartida(Scanner sc, TUI tui){
         System.out.println("Iniciant partida...");
         Joc j = new Joc();
-        j.novaPartida();
+        j.novaPartida(sc, tui, j);
     }
     public static void accedirConfig(Scanner sc, TUI tui, Joc j){
         System.out.println("Accedint a la configuració...");

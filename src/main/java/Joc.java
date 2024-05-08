@@ -1,5 +1,8 @@
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Joc {
     public char[][] getTaulell() {
         return taulell;
@@ -18,12 +21,16 @@ public class Joc {
         this.midaTaulell = midaTaulell;
     }
 
+    public void setTorn(short torn) {
+        this.torn = torn;
+    }
+
     public Joc(){
         this.midaTaulell = 3;
         this.taulell = new char[midaTaulell][midaTaulell];
             for (int i = 0; i < midaTaulell; i++){
                 for (int j = 0; j < midaTaulell; j++){
-                    this.taulell[i][j] = ' ';
+                    this.taulell[i][j] = '_';
                 }
             }
 
@@ -35,15 +42,34 @@ public class Joc {
         this.torn = torn1;
     }
 
-    public void novaPartida() {
-        TUI.mostrarTaulell();
+    public void novaPartida(Scanner sc, TUI tui, Joc j) {
+        tui.mostrarTaulell(j);
         System.out.println("És el torn del jugador: "+ torn);
+        jugar(sc.nextInt(), sc.nextInt(), sc.next().charAt(0), sc, tui, j);
     }
 
-    public boolean jugar(int fila, int columna, char jugador) {
+    public boolean jugar(int fila, int columna, char jugador, Scanner sc, TUI tui, Joc j) {
 
-        throw new NotImplementedException();
+            if (getTaulell()[fila][columna] == '_') {
+                getTaulell()[fila][columna] = jugador;
+                tui.mostrarTaulell(j);
+                if (getTorn() == (short) 1){
+                    setTorn((short) 2);
+                    System.out.println("Torn del jugador " + getTorn());
+                } else {
+                    setTorn((short) 1);
+                    System.out.println("Torn del jugador " + getTorn());
+                }
+                jugar(sc.nextInt(), sc.nextInt(), sc.next().charAt(0), sc, tui, j);
+
+                return true;
+            } else {
+                System.out.println("Posicio ocupada, torna de nou!");
+                jugar(sc.nextInt(), sc.nextInt(), sc.next().charAt(0), sc, tui, j);
+                return false;
+            }
     }
+
 
 
     public boolean jugadaGuanyadora(int fila, int columna, char jugador) {
@@ -57,6 +83,10 @@ public class Joc {
                 || (fila + columna == 2 && taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador);
 
         taulell[fila][columna] = original;
+
+        if (ganadora){
+            System.out.println("Has guanyat!!");
+        }
 
         return ganadora;
     }
