@@ -34,19 +34,24 @@ public class Main {
         char jugadorActual = 'X';
         while (continuar) {
             tui.mostrarTaulell(joc.getTaulell());
-            int[] jugada = tui.recollirJugada(joc);
-            if (joc.jugar(jugada[0], jugada[1], jugadorActual)) {
-                if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
-                    tui.mostrarTaulell(joc.getTaulell());
-                    tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
-                    continuar = false;
+            boolean jugadaValida = false;
+            while (!jugadaValida) {
+                int[] jugada = tui.recollirJugada(joc);
+                if (joc.jugar(jugada[0], jugada[1], jugadorActual)) {
+                    jugadaValida = true;
+                    if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
+                        tui.mostrarTaulell(joc.getTaulell());
+                        tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
+                        continuar = false;
+                    }
+                    jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
+                } else {
+                    tui.mostrarMissatge("Posició ocupada. Tria una altra posició.");
                 }
-                jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
-            } else {
-                tui.mostrarMissatge("Posició ocupada. Tria una altra posició.");
             }
         }
     }
+
 
     public static void carregarPartida() {
     }

@@ -34,7 +34,8 @@ public class Joc {
                 return true;
             }
 
-        }   return false;
+        }
+        return false;
     }
 
     public boolean jugadaGuanyadora(int fila, int columna, char jugador) {

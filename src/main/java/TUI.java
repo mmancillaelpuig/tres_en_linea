@@ -35,7 +35,7 @@ public class TUI {
         int columna = sc.nextInt();
         if (fila >= j.getMidaTaulell() || columna >= j.getMidaTaulell()) {
             System.out.println("Entrada no vàlida, torna a provar");
-            return recollirJugada(j); //primera vegada aplicada recursivitat
+            return recollirJugada(j); //recursivitat per tornar a preguntar les dades
 
         }
         return new int[]{fila, columna};
