@@ -1,3 +1,8 @@
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Main {
     public static void main(String[] args) {
         TUI tui = new TUI();
@@ -54,6 +59,7 @@ public class Main {
 
 
     public static void carregarPartida() {
+
     }
 
     public static void configuracio(Joc joc, TUI tui) {
