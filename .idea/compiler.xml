@@ -13,7 +13,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="tres_en_linea" options="--add-exports java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED" />
+      <module name="tres_en_linea" options="" />
     </option>
   </component>
 </project>

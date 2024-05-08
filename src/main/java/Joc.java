@@ -27,11 +27,14 @@ public class Joc {
     }
 
     public boolean jugar(int fila, int columna, char simbol) {
-        if (taulell[fila][columna] == '_') {
-            taulell[fila][columna] = simbol;
-            return true;
-        }
-        return false;
+
+        while(!jugadaGuanyadora(fila, columna, simbol)) {
+            if (taulell[fila][columna] == '_') {
+                taulell[fila][columna] = simbol;
+                return true;
+            }
+
+        }   return false;
     }
 
     public boolean jugadaGuanyadora(int fila, int columna, char jugador) {
