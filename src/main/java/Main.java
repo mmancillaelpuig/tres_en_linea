@@ -44,18 +44,16 @@ public class Main {
                 int[] jugada = tui.recollirJugada(joc);
                 if (joc.jugar(jugada[0], jugada[1], jugadorActual)) {
                     jugadaValida = true;
-                    for (int fila = 0; fila < joc.getMidaTaulell(); fila++){
-                        for (int columna = 0; columna < joc.getMidaTaulell(); columna++){
-                            if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
-                                tui.mostrarTaulell(joc.getTaulell());
-                                tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
-                                continuar = false;
-                            } else {
-                                jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
-                            }
-                        }
+                    if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
+                        tui.mostrarTaulell(joc.getTaulell());
+                        tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
+                        continuar = false;
+                    } else if (joc.jugadaEmpate(jugada[0], jugada[1], jugadorActual)){
+                        tui.mostrarMissatge("Empat!!");
+                        continuar = false;
+                    } else {
+                        jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
                     }
-
 
                 } else {
                     tui.mostrarMissatge("Posició ocupada. Tria una altra posició.");

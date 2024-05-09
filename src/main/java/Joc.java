@@ -27,14 +27,10 @@ public class Joc {
     }
 
     public boolean jugar(int fila, int columna, char simbol) {
-
-        while(!jugadaGuanyadora(fila, columna, simbol)) {
             if (taulell[fila][columna] == '_') {
                 taulell[fila][columna] = simbol;
                 return true;
             }
-
-        }
         return false;
     }
 
@@ -47,6 +43,18 @@ public class Joc {
             if (taulell[i][midaTaulell - i - 1] != jugador) diagonal2 = false;
         }
         return rows || columns || diagonal1 || diagonal2;
+    }
+
+    public boolean jugadaEmpate(int fila, int columna, char jugador){
+        for (int i = 0; i < getMidaTaulell(); i++){
+            for (int j = 0; j < getMidaTaulell(); j++){
+                if (taulell[i][j] != '_' && taulell[i + 1][j] != '_' && taulell[i + 2][j] != '_' && taulell[i][j + 1] != '_' && taulell[i][j + 2] != '_'){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        } return false;
     }
 
     public void setMidaTaulell(short mida) {
