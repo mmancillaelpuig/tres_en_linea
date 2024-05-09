@@ -1,3 +1,8 @@
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class Main {
     public static void main(String[] args) {
         TUI tui = new TUI();
@@ -29,27 +34,39 @@ public class Main {
     }
 
     public static void novaPartida(Joc joc, TUI tui) {
-        // Implementar la lógica para nueva partida
         joc.inicialitzarTaulell();
         boolean continuar = true;
         char jugadorActual = 'X';
         while (continuar) {
             tui.mostrarTaulell(joc.getTaulell());
-            int[] jugada = tui.recollirJugada();
-            if (joc.jugar(jugada[0], jugada[1], jugadorActual)) {
-                if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
-                    tui.mostrarTaulell(joc.getTaulell());
-                    tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
-                    continuar = false;
+            boolean jugadaValida = false;
+            while (!jugadaValida) {
+                int[] jugada = tui.recollirJugada(joc);
+                if (joc.jugar(jugada[0], jugada[1], jugadorActual)) {
+                    jugadaValida = true;
+                    for (int fila = 0; fila < joc.getMidaTaulell(); fila++){
+                        for (int columna = 0; columna < joc.getMidaTaulell(); columna++){
+                            if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
+                                tui.mostrarTaulell(joc.getTaulell());
+                                tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
+                                continuar = false;
+                            } else {
+                                jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
+                            }
+                        }
+                    }
+
+
+                } else {
+                    tui.mostrarMissatge("Posició ocupada. Tria una altra posició.");
                 }
-                jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
-            } else {
-                tui.mostrarMissatge("Posició ocupada. Tria una altra posició.");
             }
         }
     }
 
+
     public static void carregarPartida() {
+
     }
 
     public static void configuracio(Joc joc, TUI tui) {
@@ -61,6 +78,7 @@ public class Main {
             tui.mostrarMissatge("Nova mida establerta: " + novaMida);
         } else {
             tui.mostrarMissatge("La mida introduïda no és vàlida. S'ha de mantenir entre 3 i 10.");
+            configuracio(joc,tui);
         }
     }
 }

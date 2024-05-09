@@ -34,7 +34,8 @@ public class Joc {
                 return true;
             }
 
-        }   return false;
+        }
+        return false;
     }
 
     public boolean jugadaGuanyadora(int fila, int columna, char jugador) {
@@ -58,6 +59,10 @@ public class Joc {
     }
     public char[][] getTaulell() {
         return taulell;
+    }
+
+    public short getMidaTaulell() {
+        return midaTaulell;
     }
 
     public short getTorn() {
