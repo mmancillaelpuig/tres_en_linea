@@ -1,61 +1,75 @@
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
-import java.util.Scanner;
-
 public class Joc {
     private char[][] taulell;
     private short torn;
     private short midaTaulell;
 
-    public char[][] getTaulell() {
-        return taulell;
-    }
-    public short getTorn() {
-        return torn;
-    }
-    public short getMidaTaulell(){return midaTaulell;}
-
-    public void setMidaTaulell(short midaTaulell) {
-        this.midaTaulell = midaTaulell;
-    }
-
-    public Joc(){
+    public Joc() {
         this.midaTaulell = 3;
         this.taulell = new char[midaTaulell][midaTaulell];
-            for (int i = 0; i < midaTaulell; i++){
-                for (int j = 0; j < midaTaulell; j++){
-                    this.taulell[i][j] = '_';
-                }
-            }
-
-        this.torn = 1;
-    }
-
-    public Joc(char[][] taulellInici, short torn1) {
-        this.taulell = taulellInici;
-        this.torn = torn1;
+        novaPartida();
     }
 
     public void novaPartida() {
+        for (int i = 0; i < midaTaulell; i++) {
+            for (int j = 0; j < midaTaulell; j++) {
+                taulell[i][j] = '_';
+            }
+        }
+        this.torn = 1;
     }
 
-    public boolean jugar(int fila, int columna, char jugador) {
-        throw new NotImplementedException();
+    public void inicialitzarTaulell() {
+        for (int i = 0; i < midaTaulell; i++) {
+            for (int j = 0; j < midaTaulell; j++) {
+                taulell[i][j] = '_';
+            }
+        }
     }
 
+    public boolean jugar(int fila, int columna, char simbol) {
+
+        while(!jugadaGuanyadora(fila, columna, simbol)) {
+            if (taulell[fila][columna] == '_') {
+                taulell[fila][columna] = simbol;
+                return true;
+            }
+
+        }
+        return false;
+    }
 
     public boolean jugadaGuanyadora(int fila, int columna, char jugador) {
-        char original = taulell[fila][columna];
-        if (original != ' ') return false;
-        taulell[fila][columna] = jugador;
+        boolean rows = true, columns = true, diagonal1 = true, diagonal2 = true;
+        for (int i = 0; i < midaTaulell; i++) {
+            if (taulell[i][columna] != jugador) columns = false;
+            if (taulell[fila][i] != jugador) rows = false;
+            if (taulell[i][i] != jugador) diagonal1 = false;
+            if (taulell[i][midaTaulell - i - 1] != jugador) diagonal2 = false;
+        }
+        return rows || columns || diagonal1 || diagonal2;
+    }
 
-        boolean ganadora = (taulell[fila][0] == jugador && taulell[fila][1] == jugador && taulell[fila][2] == jugador)
-                || (taulell[0][columna] == jugador && taulell[1][columna] == jugador && taulell[2][columna] == jugador)
-                || (fila == columna && taulell[0][0] == jugador && taulell[1][1] == jugador && taulell[2][2] == jugador)
-                || (fila + columna == 2 && taulell[0][2] == jugador && taulell[1][1] == jugador && taulell[2][0] == jugador);
+    public void setMidaTaulell(short mida) {
+        if (mida >= 3 && mida <= 10) {
+            this.midaTaulell = mida;
+            taulell = new char[mida][mida];
+            inicialitzarTaulell();
+        }
 
-        taulell[fila][columna] = original;
+    }
+    public char[][] getTaulell() {
+        return taulell;
+    }
 
-        return ganadora;
+    public short getMidaTaulell() {
+        return midaTaulell;
+    }
+
+    public short getTorn() {
+        return torn;
+    }
+
+    public void setTorn(short torn) {
+        this.torn = torn;
     }
 }

@@ -1,60 +1,84 @@
-import java.util.Scanner;
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        Joc j = new Joc();
         TUI tui = new TUI();
-        int opcio = tui.mostrarMenu();
-        boolean exit = false;
-        while (!exit) {
+        Joc joc = new Joc();
+        boolean sortir = false;
+
+        while (!sortir) {
+            tui.mostrarMenu();
+            int opcio = tui.solicitarEntradaEntera("");
             switch (opcio) {
                 case 1:
-                    j.novaPartida();
-                    tui.mostrarTaulell(j);
+                    novaPartida(joc, tui);
                     break;
                 case 2:
-//                   carregarPartida();
+                    carregarPartida();
                     break;
                 case 3:
-                    configuracio(sc, tui, j);
+                    configuracio(joc, tui);
                     break;
                 case 4:
-                    sortir();
+                    tui.mostrarMissatge("Sortint del joc...");
+                    tui.tancar();
+                    sortir = true;
                     break;
                 default:
-                    System.out.println("No es una opció correcta, torna de nou!");
-                    tui.mostrarMenu();
+                    tui.mostrarMissatge("Opció no vàlida, torna a intentar-ho.");
             }
         }
     }
 
-    public static void configuracio(Scanner sc, TUI tui, Joc j){
-        tui.accedirConfig(sc,tui,j);
-        System.out.println("Configuració:\n1.La mida predeterminada és: " + j.getMidaTaulell() + "(La mida del taulell ha ser entre 3 i 10)\nVols modificar la mida del taulell?\n1.Si\n2.No");
-        int configEdit = sc.nextInt();
+    public static void novaPartida(Joc joc, TUI tui) {
+        joc.inicialitzarTaulell();
+        boolean continuar = true;
+        char jugadorActual = 'X';
+        while (continuar) {
+            tui.mostrarTaulell(joc.getTaulell());
+            boolean jugadaValida = false;
+            while (!jugadaValida) {
+                int[] jugada = tui.recollirJugada(joc);
+                if (joc.jugar(jugada[0], jugada[1], jugadorActual)) {
+                    jugadaValida = true;
+                    for (int fila = 0; fila < joc.getMidaTaulell(); fila++){
+                        for (int columna = 0; columna < joc.getMidaTaulell(); columna++){
+                            if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
+                                tui.mostrarTaulell(joc.getTaulell());
+                                tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
+                                continuar = false;
+                            } else {
+                                jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
+                            }
+                        }
+                    }
 
-        if (configEdit == 1){
-            System.out.println("Mida desitjada?");
-            int novaMida = sc.nextInt();
-            sc.nextLine();
-            if (novaMida > 10 || novaMida < 3){
-                System.out.println("Aquests valors no son correctes! Només pot ser entre 3 i 10");
-                configuracio(sc, tui,j);
-            } else {
-                j.setMidaTaulell((short)novaMida);
-                System.out.println("La nova mida és:" + j.getMidaTaulell());
-                System.out.println("Tornant al menú...");
-                tui.mostrarMenu();
+
+                } else {
+                    tui.mostrarMissatge("Posició ocupada. Tria una altra posició.");
+                }
             }
-        } else if (configEdit == 2) {
-            System.out.println("Tornant a menú principal");
-            tui.mostrarMenu();
-
         }
     }
 
-    public static void sortir(){
-        System.exit(0);
+
+    public static void carregarPartida() {
+
+    }
+
+    public static void configuracio(Joc joc, TUI tui) {
+        int midaActual = joc.getTaulell().length;
+        tui.mostrarMissatge("Configurant mida del taulell. Actual mida: " + midaActual);
+        int novaMida = tui.solicitarEntradaEntera("Introdueix la nova mida del taulell (entre 3 y 10):");
+        if (novaMida >= 3 && novaMida <= 10) {
+            joc.setMidaTaulell((short) novaMida);
+            tui.mostrarMissatge("Nova mida establerta: " + novaMida);
+        } else {
+            tui.mostrarMissatge("La mida introduïda no és vàlida. S'ha de mantenir entre 3 i 10.");
+            configuracio(joc,tui);
+        }
     }
 }
