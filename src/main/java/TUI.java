@@ -1,60 +1,95 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class TUI {
-    public  void mostrarMenu(Scanner sc, TUI tui, Joc j) {
-        boolean exit = false;
+    private Scanner sc;
 
-        while (!exit) {
-            saludo();
-            int start = sc.nextInt();
-            switch (start) {
-                case 1:
-                    iniciarPartida(sc, tui);
-                    exit = true;
-                    break;
-                case 2:
-                   carregarPartida();
-                    exit = true;
-                    break;
-                case 3:
-                    accedirConfig(sc, tui,j);
-                    exit = true;
-                    break;
-                case 4:
-                    exit();
-                default:
-                    System.out.println("No es una opció correcta, torna de nou!");
-            }
-        }
+    public TUI() {
+        this.sc = new Scanner(System.in);
     }
-    public static void saludo(){
-        System.out.println("Benvingut al tres en línia! Escull una de les següents opcions per a continuar:\n1.Nova Partida\n2.Carregar Partida" +
-                "\n3.Configuració\n4.Sortir");
-    }
-    public void mostrarTaulell(Joc j) {
-        char[][] taulell = j.getTaulell();
 
-        for (int fila = 0; fila < taulell.length; fila++) {
-            for (int columna = 0; columna < taulell[fila].length; columna++) {
-                System.out.print(taulell[fila][columna] +" ");
+    public int solicitarEntradaEntera(String mensaje) {
+        System.out.println(mensaje);
+        return sc.nextInt();
+    }
+
+    public void mostrarMenu() {
+        System.out.println("Benvingut al tres en línia! Escull una de les següents opcions per a continuar:\n" +
+                "1. Nova Partida\n" +
+                "2. Carregar Partida\n" +
+                "3. Configuració\n" +
+                "4. Sortir");
+    }
+
+    public void mostrarTaulell(char[][] taulell) {
+        for (char[] fila : taulell) {
+            for (char c : fila) {
+                System.out.print(c + " ");
             }
             System.out.println();
         }
     }
-    public static void iniciarPartida(Scanner sc, TUI tui){
-        System.out.println("Iniciant partida...");
-        Joc j = new Joc();
-        j.novaPartida(sc, tui, j);
+
+    public int[] recollirJugada(Joc j) {
+        System.out.println("\nIntrodueix la fila i la columna:");
+        int fila = sc.nextInt();
+        int columna = sc.nextInt();
+        if (fila >= j.getMidaTaulell() || columna >= j.getMidaTaulell()) {
+            System.out.println("Entrada no vàlida, torna a provar");
+            return recollirJugada(j); //recursivitat per tornar a preguntar les dades
+
+        } else if (fila == -1 && columna == -1) {
+            System.out.println("Guardant i sortint del joc...");
+            mostrarMenu();
+        }
+        return new int[]{fila, columna};
     }
-    public static void accedirConfig(Scanner sc, TUI tui, Joc j){
-        System.out.println("Accedint a la configuració...");
-        Main.configuracio(sc,tui,j);
+
+    public void gravarPartida(){
+        Path dirPath = Paths.get("savedgames");
+        boolean result = false;
+
+  /*      if (Files.notExists(dirPath)){
+                File savedgames = new File("savedgames");
+                result = savedgames.mkdir();
+
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+                String data = dateFormat.format(new Date());
+
+                String nomFitxer = data + ".txt";
+                File partidaGuardada = new File(savedgames, nomFitxer);
+
+                FileWriter myWriter = new FileWriter(partidaGuardada);
+                myWriter.write(j.getTorn());
+                myWriter.write(j.getTaulell());
+
+
+            } else {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+                String data = dateFormat.format(new Date());
+
+                String nomFitxer = data + ".txt";
+                File partidaGuardada = new File(dirPath, nomFitxer);
+
+                FileWriter myWriter = new FileWriter(partidaGuardada);
+                myWriter.write(j.getTorn());
+                myWriter.write(j.getTaulell());
+
+            }*/
     }
-    public static void carregarPartida(){
-        System.out.println("Carregant partida...");
+
+    public void mostrarMissatge(String missatge) {
+        System.out.println(missatge);
     }
-    public static void exit(){
-        System.out.println("Sortint...");
-        System.exit(0);
+
+    public void tancar() {
+        sc.close();
     }
 }
