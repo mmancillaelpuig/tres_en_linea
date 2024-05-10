@@ -44,6 +44,16 @@ public class Main {
                 int[] jugada = tui.recollirJugada(joc);
                 if (joc.jugar(jugada[0], jugada[1], jugadorActual)) {
                     jugadaValida = true;
+
+                    if (jugada[0] >= joc.getMidaTaulell() || jugada[1] >= joc.getMidaTaulell()) {
+                        tui.mostrarMissatge("Entrada no vàlida, torna a provar");
+
+                    } else if (jugada[0] == -1 && jugada[1] == -1) {
+                        System.out.println("Guardant i sortint del joc...");
+                        joc.gravarPartida(joc);
+                        tui.mostrarMenu();
+                    }
+
                     if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
                         tui.mostrarTaulell(joc.getTaulell());
                         tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");

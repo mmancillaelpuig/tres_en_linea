@@ -100,9 +100,7 @@ public class Joc {
     }
 
     public void gravarPartida(Joc j)  {
-        // mirar si existe el directorio
-        // si no existe crearlo
-        // crear un fichero y guardar la partida
+
         boolean result = false;
         File file = new File("savedgames");
 
@@ -125,6 +123,27 @@ public class Joc {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
+        } else {
+            file.mkdir();
+
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+            String data = dateFormat.format(new Date());
+
+            String nomFitxer = data + ".txt";
+            File partidaGuardada = new File(file, nomFitxer);
+
+            FileWriter myWriter = null;
+
+            try {
+                myWriter.write(j.getTorn());
+                myWriter.write(Arrays.deepToString(j.getTaulell()));
+                myWriter = new FileWriter(partidaGuardada);
+                myWriter.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
 
         }
 
