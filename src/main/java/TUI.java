@@ -47,43 +47,13 @@ public class TUI {
 
         } else if (fila == -1 && columna == -1) {
             System.out.println("Guardant i sortint del joc...");
+            j.gravarPartida(j);
             mostrarMenu();
         }
         return new int[]{fila, columna};
     }
 
-    public void gravarPartida(){
-        Path dirPath = Paths.get("savedgames");
-        boolean result = false;
 
-  /*      if (Files.notExists(dirPath)){
-                File savedgames = new File("savedgames");
-                result = savedgames.mkdir();
-
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
-                String data = dateFormat.format(new Date());
-
-                String nomFitxer = data + ".txt";
-                File partidaGuardada = new File(savedgames, nomFitxer);
-
-                FileWriter myWriter = new FileWriter(partidaGuardada);
-                myWriter.write(j.getTorn());
-                myWriter.write(j.getTaulell());
-
-
-            } else {
-                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
-                String data = dateFormat.format(new Date());
-
-                String nomFitxer = data + ".txt";
-                File partidaGuardada = new File(dirPath, nomFitxer);
-
-                FileWriter myWriter = new FileWriter(partidaGuardada);
-                myWriter.write(j.getTorn());
-                myWriter.write(j.getTaulell());
-
-            }*/
-    }
 
     public void mostrarMissatge(String missatge) {
         System.out.println(missatge);
