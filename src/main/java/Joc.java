@@ -27,26 +27,64 @@ public class Joc {
     }
 
     public boolean jugar(int fila, int columna, char simbol) {
-
-        while(!jugadaGuanyadora(fila, columna, simbol)) {
             if (taulell[fila][columna] == '_') {
                 taulell[fila][columna] = simbol;
                 return true;
             }
-
-        }
         return false;
     }
 
     public boolean jugadaGuanyadora(int fila, int columna, char jugador) {
-        boolean rows = true, columns = true, diagonal1 = true, diagonal2 = true;
-        for (int i = 0; i < midaTaulell; i++) {
-            if (taulell[i][columna] != jugador) columns = false;
-            if (taulell[fila][i] != jugador) rows = false;
-            if (taulell[i][i] != jugador) diagonal1 = false;
-            if (taulell[i][midaTaulell - i - 1] != jugador) diagonal2 = false;
+        //Comprovar linea recta
+            for (int i = 0; i < midaTaulell; i++) {
+                for (int j = 0; j < midaTaulell - 2; j++) {
+                    if (taulell[i][j] == jugador && taulell[i][j + 1] == jugador && taulell[i][j + 2] == jugador) {
+                        return true;
+                    }
+                }
+            }
+
+            // Comprovar columna
+            for (int i = 0; i < midaTaulell - 2; i++) {
+                for (int j = 0; j < midaTaulell; j++) {
+                    if (taulell[i][j] == jugador && taulell[i + 1][j] == jugador && taulell[i + 2][j] == jugador) {
+                        return true;
+                    }
+                }
+            }
+
+            //Comprovar diagonal
+            for (int i = 0; i < midaTaulell - 2; i++) {
+                for (int j = 0; j < midaTaulell - 2; j++) {
+                    if (taulell[i][j] == jugador && taulell[i + 1][j + 1] == jugador && taulell[i + 2][j + 2] == jugador) {
+                        return true;
+                    }
+                }
+            }
+
+            //Comprovar diagonal 2
+            for (int i = 0; i < midaTaulell - 2; i++) {
+                for (int j = 2; j < midaTaulell; j++) {
+                    if (taulell[i][j] == jugador && taulell[i + 1][j - 1] == jugador && taulell[i + 2][j - 2] == jugador) {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
-        return rows || columns || diagonal1 || diagonal2;
+
+
+        public boolean jugadaEmpate(int fila, int columna, char jugador){
+        for (int i = 0; i < getMidaTaulell(); i++){
+            for (int j = 0; j < getMidaTaulell(); j++){
+                if (taulell[i][j] != '_' && taulell[i + 1][j] != '_' && taulell[i + 2][j] != '_' && taulell[i][j + 1] != '_' && taulell[i][j + 2] != '_'){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        } return false;
     }
 
     public void setMidaTaulell(short mida) {

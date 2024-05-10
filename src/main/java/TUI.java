@@ -48,9 +48,15 @@ public class TUI {
         } else if (fila == -1 && columna == -1) {
             System.out.println("Guardant i sortint del joc...");
             mostrarMenu();
-            Path dirPath = Paths.get("savedgames");
-            boolean result = false;
-            /*if (Files.notExists(dirPath)){
+        }
+        return new int[]{fila, columna};
+    }
+
+    public void gravarPartida(){
+        Path dirPath = Paths.get("savedgames");
+        boolean result = false;
+
+  /*      if (Files.notExists(dirPath)){
                 File savedgames = new File("savedgames");
                 result = savedgames.mkdir();
 
@@ -77,8 +83,6 @@ public class TUI {
                 myWriter.write(j.getTaulell());
 
             }*/
-        }
-        return new int[]{fila, columna};
     }
 
     public void mostrarMissatge(String missatge) {
