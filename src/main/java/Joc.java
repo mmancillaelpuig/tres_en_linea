@@ -62,7 +62,7 @@ public class Joc {
                 }
             }
 
-            //Comprovar diagonal inversa
+            //Comprovar diagonal 2
             for (int i = 0; i < midaTaulell - 2; i++) {
                 for (int j = 2; j < midaTaulell; j++) {
                     if (taulell[i][j] == jugador && taulell[i + 1][j - 1] == jugador && taulell[i + 2][j - 2] == jugador) {
