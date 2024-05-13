@@ -99,52 +99,27 @@ public class Joc {
         return false;
     }
 
-    public void gravarPartida(Joc j)  {
-
-        boolean result = false;
+    public void gravarPartida(Joc j) {
         File file = new File("savedgames");
 
-        if ((file.exists())) {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
-            String data = dateFormat.format(new Date());
-
-            String nomFitxer = data + ".txt";
-            File partidaGuardada = new File(file, nomFitxer);
-
-            FileWriter myWriter = null;
-            try {
-                myWriter = new FileWriter(partidaGuardada);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-            try {
-                myWriter.write(j.getTorn());
-                myWriter.write(Arrays.deepToString(j.getTaulell()));
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-
-        } else {
+        if (!file.exists()) {
             file.mkdir();
+        }
 
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
-            String data = dateFormat.format(new Date());
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+        String data = dateFormat.format(new Date());
+        String nomFitxer = data + ".txt";
+        File partidaGuardada = new File(file, nomFitxer);
 
-            String nomFitxer = data + ".txt";
-            File partidaGuardada = new File(file, nomFitxer);
-
-            FileWriter myWriter = null;
-
-            try {
-                myWriter.write(j.getTorn());
-                myWriter.write(Arrays.deepToString(j.getTaulell()));
-                myWriter = new FileWriter(partidaGuardada);
-                myWriter.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+        try (FileWriter fw = new FileWriter(partidaGuardada)) {
+            fw.write(getMidaTaulell() + "\n");
+            fw.write(getTorn() + "\n");
+            for (char[] fila : j.getTaulell()) {
+                fw.write(Arrays.toString(fila) + "\n");
             }
 
-
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }
@@ -172,5 +147,9 @@ public class Joc {
 
     public void setTorn(short torn) {
         this.torn = torn;
+    }
+
+    public void setTaulell(char[][] taulell) {
+        this.taulell = taulell;
     }
 }
