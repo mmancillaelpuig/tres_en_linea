@@ -41,15 +41,6 @@ public class TUI {
         System.out.println("\nIntrodueix la fila i la columna:");
         int fila = sc.nextInt();
         int columna = sc.nextInt();
-        if (fila >= j.getMidaTaulell() || columna >= j.getMidaTaulell()) {
-            System.out.println("Entrada no vàlida, torna a provar");
-            return recollirJugada(j); //recursivitat per tornar a preguntar les dades
-
-        } else if (fila == -1 && columna == -1) {
-            System.out.println("Guardant i sortint del joc...");
-            j.gravarPartida(j);
-            mostrarMenu();
-        }
         return new int[]{fila, columna};
     }
 
