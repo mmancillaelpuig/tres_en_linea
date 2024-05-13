@@ -23,9 +23,14 @@ public class Main {
                     carregarPartida(joc, tui);
                     break;
                 case 3:
+                    eliminarPartida(tui);
+                    break;
+
+                case 4:
                     configuracio(joc, tui);
                     break;
-                case 4:
+
+                case 5:
                     tui.mostrarMissatge("Sortint del joc...");
                     tui.tancar();
                     sortir = true;
@@ -153,6 +158,32 @@ public class Main {
                 joc.setTorn((short) (joc.getTorn() + 1));
             }
         }
+    }
+
+    public static void eliminarPartida(TUI tui){
+        File dir = new File("savedgames");
+        File[] arxiu = dir.listFiles();
+        if (arxiu == null || arxiu.length == 0) {
+            tui.mostrarMissatge("No hi ha cap partida guardada.");
+            return;
+        }
+
+        tui.mostrarMissatge("Selecciona la partida que vols eliminar:\n");
+        for (int i = 0; i < arxiu.length; i++) {
+            tui.mostrarMissatge((i + 1) + ": " + arxiu[i].getName());
+        }
+
+        int eleccio = tui.solicitarEntradaEntera("\nIntrodueix el número de la partida: ") - 1;
+        if (eleccio < 0 || eleccio >= arxiu.length) {
+            tui.mostrarMissatge("Selecció no vàlida.");
+            return;
+        }
+
+        arxiu[eleccio].delete();
+
+        tui.mostrarMissatge("Has esborrat l'arxiu: " + (eleccio + 1));
+
+
     }
 
 
