@@ -1,9 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
@@ -29,7 +25,6 @@ public class Main {
                 case 4:
                     configuracio(joc, tui);
                     break;
-
                 case 5:
                     tui.mostrarMissatge("Sortint del joc...");
                     tui.tancar();
@@ -45,34 +40,37 @@ public class Main {
         joc.inicialitzarTaulell();
         boolean continuar = true;
         char jugadorActual = 'X';
+        tui.mostrarTaulell(joc.getTaulell());
         while (continuar) {
-            tui.mostrarTaulell(joc.getTaulell());
-            int[] jugada = tui.recollirJugada(joc);
-
-            if (jugada[0] == -1 && jugada[1] == -1) {
-                tui.mostrarMissatge("Guardant i sortint del joc...");
-                joc.gravarPartida(joc);
-                return;
-            }
-
-            boolean jugadaValida = joc.jugar(jugada[0], jugada[1], jugadorActual);
-            if (!jugadaValida) {
-                tui.mostrarMissatge("Posició ocupada o entrada no vàlida. Tria una altra posició.");
-                continue;
-            }
-
-            if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
+            if (jugadorActual == 'O') {//torn de la IA
+                int[] movimentIA = joc.decidirMovimentIA();
+                joc.jugar(movimentIA[0], movimentIA[1], 'O');
                 tui.mostrarTaulell(joc.getTaulell());
-                tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
-                continuar = false;
-            } else if (joc.jugadaEmpate(jugada[0], jugada[1], jugadorActual)) {
-                tui.mostrarMissatge("Empat!!");
-                continuar = false;
-            } else {
-                jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
+                if (joc.jugadaGuanyadora(movimentIA[0], movimentIA[1], 'O')) {
+                    tui.mostrarMissatge("La IA ha guanyat!");
+                    break;
+                }
+            } else { //torn del jugador
+                int[] jugada = tui.recollirJugada(joc);
+                boolean jugadaValida = joc.jugar(jugada[0], jugada[1], jugadorActual);
+                if (!jugadaValida) {
+                    tui.mostrarMissatge("Posició ocupada o entrada no vàlida. Tria una altra posició.");
+                    continue;
+                }
+                if (joc.jugadaGuanyadora(jugada[0], jugada[1], jugadorActual)) {
+                    tui.mostrarTaulell(joc.getTaulell());
+                    tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
+                    break;
+                }
             }
+            if (joc.taulellPle()) {
+                tui.mostrarMissatge("Empat!");
+                break;
+            }
+            jugadorActual = (jugadorActual == 'X') ? 'O' : 'X';
         }
     }
+
 
 
     public static void carregarPartida(Joc joc, TUI tui) {
@@ -104,18 +102,18 @@ public class Main {
             joc.setTorn(torn);
 
 
-            char[][] nuevoTablero = new char[joc.getMidaTaulell()][joc.getMidaTaulell()];
+            char[][] nouTaulell = new char[joc.getMidaTaulell()][joc.getMidaTaulell()];
             for (int i = 0; i < joc.getMidaTaulell(); i++) {
                 if (sc.hasNextLine()) {
                     String linea = sc.nextLine();
-                    nuevoTablero[i] = linea.replaceAll("[\\[\\], ]", "").toCharArray();
+                    nouTaulell[i] = linea.replaceAll("[\\[\\], ]", "").toCharArray();
                 } else {
-                    tui.mostrarMissatge("Error: El archivo no tiene suficientes líneas para cargar el tablero.");
+                    tui.mostrarMissatge("Error: L'arxiu no conté suficients línies per obrir el fitxer.");
                     return;
                 }
             }
 
-            joc.setTaulell(nuevoTablero);
+            joc.setTaulell(nouTaulell);
             partidaCarregada(joc, tui);
 
         } catch (FileNotFoundException e) {

@@ -6,11 +6,15 @@ public class TUI {
     public TUI() {
         this.sc = new Scanner(System.in);
     }
-
     public int solicitarEntradaEntera(String mensaje) {
         System.out.println(mensaje);
+        while (!sc.hasNextInt()) {
+            sc.next();
+            System.out.println("Entrada invàlida. Si us plau, introdueix un número enter.");
+        }
         return sc.nextInt();
     }
+
 
 
     public void mostrarMenu() {
