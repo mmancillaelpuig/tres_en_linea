@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
@@ -123,7 +120,6 @@ public class Joc {
         }
 
     }
-
     public void setMidaTaulell(short mida) {
         if (mida >= 3 && mida <= 10) {
             this.midaTaulell = mida;
@@ -132,6 +128,101 @@ public class Joc {
         }
 
     }
+    public int minimax(int profundidad, boolean esMaximizador) {
+        int puntuacion = evaluarTaulell();
+
+        // Casos base: victoria, derrota o empate
+        if (puntuacion == 10) return puntuacion;
+        if (puntuacion == -10) return puntuacion;
+        if (taulellPle()) return 0;
+
+        if (esMaximizador) {
+            int mejorPuntuacion = -1000;
+            for (int i = 0; i < midaTaulell; i++) {
+                for (int j = 0; j < midaTaulell; j++) {
+                    if (taulell[i][j] == '_') {
+                        taulell[i][j] = 'O';  // La IA juega como 'O'
+                        mejorPuntuacion = Math.max(mejorPuntuacion, minimax(profundidad + 1, false));
+                        taulell[i][j] = '_';
+                    }
+                }
+            }
+            return mejorPuntuacion;
+        } else {
+            int peorPuntuacion = 1000;
+            for (int i = 0; i < midaTaulell; i++) {
+                for (int j = 0; j < midaTaulell; j++) {
+                    if (taulell[i][j] == '_') {
+                        taulell[i][j] = 'X';  // Suponemos que el humano juega como 'X'
+                        peorPuntuacion = Math.min(peorPuntuacion, minimax(profundidad + 1, true));
+                        taulell[i][j] = '_';
+                    }
+                }
+            }
+            return peorPuntuacion;
+        }
+    }
+
+    public boolean taulellPle() {
+        for (int i = 0; i < midaTaulell; i++) {
+            for (int j = 0; j < midaTaulell; j++) {
+                if (taulell[i][j] == '_') {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+
+    public int evaluarTaulell() {
+        for (int i = 0; i < midaTaulell; i++) {
+            if (taulell[i][0] == taulell[i][1] && taulell[i][1] == taulell[i][2]) {
+                if (taulell[i][0] == 'O') return +10;
+                else if (taulell[i][0] == 'X') return -10;
+            }
+        }
+
+        for (int j = 0; j < midaTaulell; j++) {
+            if (taulell[0][j] == taulell[1][j] && taulell[1][j] == taulell[2][j]) {
+                if (taulell[0][j] == 'O') return +10;
+                else if (taulell[0][j] == 'X') return -10;
+            }
+        }
+
+        if (taulell[0][0] == taulell[1][1] && taulell[1][1] == taulell[2][2]) {
+            if (taulell[0][0] == 'O') return +10;
+            else if (taulell[0][0] == 'X') return -10;
+        }
+
+        if (taulell[0][2] == taulell[1][1] && taulell[1][1] == taulell[2][0]) {
+            if (taulell[0][2] == 'O') return +10;
+            else if (taulell[0][2] == 'X') return -10;
+        }
+        return 0;
+    }
+
+    public int[] decidirMovimentIA() {
+        int mejorPuntuacion = Integer.MIN_VALUE;
+        int[] mejorMovimiento = new int[]{-1, -1};
+
+        for (int i = 0; i < midaTaulell; i++) {
+            for (int j = 0; j < midaTaulell; j++) {
+                if (taulell[i][j] == '_') {
+                    taulell[i][j] = 'O';
+                    int puntuacionMovimiento = minimax(0, false);
+                    taulell[i][j] = '_';
+                    if (puntuacionMovimiento > mejorPuntuacion) {
+                        mejorPuntuacion = puntuacionMovimiento;
+                        mejorMovimiento[0] = i;
+                        mejorMovimiento[1] = j;
+                    }
+                }
+            }
+        }
+        return mejorMovimiento;
+    }
+
 
     public char[][] getTaulell() {
         return taulell;
