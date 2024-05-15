@@ -148,7 +148,7 @@ public class Main {
                 tui.mostrarTaulell(joc.getTaulell());
                 tui.mostrarMissatge("El jugador " + jugadorActual + " ha guanyat!");
                 continuar = false;
-            } else if (joc.jugadaEmpate(jugada[0], jugada[1], jugadorActual)) {
+            } else if (joc.jugadaEmpat(jugada[0], jugada[1], jugadorActual)) {
                 tui.mostrarMissatge("¡¡Empat!!");
                 continuar = false;
             } else {

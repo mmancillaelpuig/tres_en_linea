@@ -83,7 +83,7 @@ public class Joc {
     }
 
 
-    public boolean jugadaEmpate(int fila, int columna, char jugador) {
+    public boolean jugadaEmpat(int fila, int columna, char jugador) {
         for (int i = 0; i < getMidaTaulell(); i++) {
             for (int j = 0; j < getMidaTaulell(); j++) {
                 if (taulell[i][j] != '_' && taulell[i + 1][j] != '_' && taulell[i + 2][j] != '_' && taulell[i][j + 1] != '_' && taulell[i][j + 2] != '_') {
@@ -131,7 +131,7 @@ public class Joc {
     public int minimax(int profundidad, boolean esMaximizador) {
         int puntuacion = evaluarTaulell();
 
-        // Casos base: victoria, derrota o empate
+        //casos base: victoria, derrota o empat
         if (puntuacion == 10) return puntuacion;
         if (puntuacion == -10) return puntuacion;
         if (taulellPle()) return 0;
@@ -141,7 +141,7 @@ public class Joc {
             for (int i = 0; i < midaTaulell; i++) {
                 for (int j = 0; j < midaTaulell; j++) {
                     if (taulell[i][j] == '_') {
-                        taulell[i][j] = 'O';  // La IA juega como 'O'
+                        taulell[i][j] = 'O';
                         mejorPuntuacion = Math.max(mejorPuntuacion, minimax(profundidad + 1, false));
                         taulell[i][j] = '_';
                     }
@@ -153,7 +153,7 @@ public class Joc {
             for (int i = 0; i < midaTaulell; i++) {
                 for (int j = 0; j < midaTaulell; j++) {
                     if (taulell[i][j] == '_') {
-                        taulell[i][j] = 'X';  // Suponemos que el humano juega como 'X'
+                        taulell[i][j] = 'X';
                         peorPuntuacion = Math.min(peorPuntuacion, minimax(profundidad + 1, true));
                         taulell[i][j] = '_';
                     }
@@ -175,52 +175,69 @@ public class Joc {
     }
 
 
+
     public int evaluarTaulell() {
         for (int i = 0; i < midaTaulell; i++) {
-            if (taulell[i][0] == taulell[i][1] && taulell[i][1] == taulell[i][2]) {
-                if (taulell[i][0] == 'O') return +10;
-                else if (taulell[i][0] == 'X') return -10;
+            if (totsIguals(i, 0, 0, 1)) {
+                return valor(taulell[i][0]);
+            }
+            if (totsIguals(0, i, 1, 0)) {
+                return valor(taulell[0][i]);
             }
         }
 
-        for (int j = 0; j < midaTaulell; j++) {
-            if (taulell[0][j] == taulell[1][j] && taulell[1][j] == taulell[2][j]) {
-                if (taulell[0][j] == 'O') return +10;
-                else if (taulell[0][j] == 'X') return -10;
-            }
+        if (totsIguals(0, 0, 1, 1)) {
+            return valor(taulell[0][0]);
+        }
+        if (totsIguals(0, midaTaulell - 1, 1, -1)) {
+            return valor(taulell[0][midaTaulell - 1]);
         }
 
-        if (taulell[0][0] == taulell[1][1] && taulell[1][1] == taulell[2][2]) {
-            if (taulell[0][0] == 'O') return +10;
-            else if (taulell[0][0] == 'X') return -10;
-        }
-
-        if (taulell[0][2] == taulell[1][1] && taulell[1][1] == taulell[2][0]) {
-            if (taulell[0][2] == 'O') return +10;
-            else if (taulell[0][2] == 'X') return -10;
-        }
         return 0;
     }
 
+    private boolean totsIguals(int iniciFila, int iniciColumna, int pasFila, int pasColumna) {
+        char primer = taulell[iniciFila][iniciColumna];
+        if (primer == ' ') {
+            return false;
+        }
+        int x = iniciFila;
+        int y = iniciColumna;
+        for (int i = 1; i < midaTaulell; i++) {
+            x += pasFila;
+            y += pasColumna;
+            if (taulell[x][y] != primer) {
+                return false;
+            }
+        }
+        return true;
+    }
+    private int valor(char jugador) {
+        if (jugador == 'O') return +10;
+        if (jugador == 'X') return -10;
+        return 0;
+    }
+
+
     public int[] decidirMovimentIA() {
-        int mejorPuntuacion = Integer.MIN_VALUE;
-        int[] mejorMovimiento = new int[]{-1, -1};
+        int millorPuntuacio = Integer.MIN_VALUE;
+        int[] millorMoviment = new int[]{-1, -1};
 
         for (int i = 0; i < midaTaulell; i++) {
             for (int j = 0; j < midaTaulell; j++) {
                 if (taulell[i][j] == '_') {
                     taulell[i][j] = 'O';
-                    int puntuacionMovimiento = minimax(0, false);
+                    int puntuacioMoviment = minimax(0, false);
                     taulell[i][j] = '_';
-                    if (puntuacionMovimiento > mejorPuntuacion) {
-                        mejorPuntuacion = puntuacionMovimiento;
-                        mejorMovimiento[0] = i;
-                        mejorMovimiento[1] = j;
+                    if (puntuacioMoviment > millorPuntuacio) {
+                        millorPuntuacio = puntuacioMoviment;
+                        millorMoviment[0] = i;
+                        millorMoviment[1] = j;
                     }
                 }
             }
         }
-        return mejorMovimiento;
+        return millorMoviment;
     }
 
 
